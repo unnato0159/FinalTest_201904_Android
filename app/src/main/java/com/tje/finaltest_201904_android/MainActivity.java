@@ -3,6 +3,7 @@ package com.tje.finaltest_201904_android;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.tje.finaltest_201904_android.databinding.ActivityMainBinding;
 
@@ -22,7 +23,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+        act.loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 
     @Override

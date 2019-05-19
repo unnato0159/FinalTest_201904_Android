@@ -81,6 +81,7 @@
             android:layout_height="30dp">
 
             <EditText
+                android:id="@+id/idEdt"
                 android:layout_width="290dp"
                 android:layout_height="30dp"
                 android:background="@null"/>
@@ -113,6 +114,7 @@
                 android:layout_height="30dp">
 
                 <EditText
+                    android:id="@+id/pwEdt"
                     android:layout_width="290dp"
                     android:layout_height="30dp"
                     android:background="@null"/>
@@ -136,8 +138,7 @@
        android:gravity="center">
 
        <Button
-
-
+           android:id="@+id/loginBtn"
            android:layout_width="300dp"
            android:layout_height="85dp"
            android:background="@drawable/practice"
