@@ -10,15 +10,19 @@ import android.widget.Toast;
 import com.tje.finaltest_201904_android.ServerUtil.ContextUtil;
 import com.tje.finaltest_201904_android.ServerUtil.ServerUtil;
 
+import com.tje.finaltest_201904_android.ServerUtil.adapters.MainViewPagerAdapter;
 import com.tje.finaltest_201904_android.databinding.ActivityMainBinding;
 
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static com.tje.finaltest_201904_android.ServerUtil.ContextUtil.getUserToken;
+
 public class MainActivity extends BaseActivity {
 
     ActivityMainBinding act;
+    MainViewPagerAdapter mvpa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,15 +54,27 @@ public class MainActivity extends BaseActivity {
                                     int code = json.getInt("code");
 
                                     if (code == 200) {
-                                        JSONObject data = json.getJSONObject("data");
-                                        String token = data.getString("token");
+
+                                        try{
+                                            JSONObject data = json.getJSONObject("data");
+                                            String token = data.getString("token");
+
+                                        } catch (JSONException e){
+                                            e.printStackTrace();
+                                        }
+
 
 //                                SharedPreference에 token을 저장
 
-                                        ContextUtil.setUserToken(mContext, token);
+
 
                                         Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+
+
+
                                         startActivity(intent);
+
+
 
 
 
@@ -88,6 +104,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+
+
+
 
     }
 

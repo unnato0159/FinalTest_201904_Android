@@ -85,7 +85,8 @@
                 android:id="@+id/idEdt"
                 android:layout_width="290dp"
                 android:layout_height="30dp"
-                android:background="@null"/>
+                android:background="@null"
+                android:textColor="#000000"/>
             <ImageView
                 android:src="@drawable/ewq"
                 android:layout_width="25dp"
@@ -115,6 +116,8 @@
                 android:layout_height="30dp">
 
                 <EditText
+                    android:textColor="#000000"
+                    android:inputType="textPassword"
                     android:id="@+id/pwEdt"
                     android:layout_width="290dp"
                     android:layout_height="30dp"

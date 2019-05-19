@@ -30,7 +30,13 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void setupEvents() {
         act.viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(act.tabLayout));
-        act.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+
+        act.tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(act.viewPager));
+
+
+
+        /*act.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 act.viewPager.setCurrentItem(tab.getPosition());
@@ -46,7 +52,7 @@ public class HomeActivity extends BaseActivity {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
-        });
+        });*/
 
     }
 
@@ -55,8 +61,9 @@ public class HomeActivity extends BaseActivity {
         act.tabLayout.addTab(act.tabLayout.newTab().setText("상세정보"));
         act.tabLayout.addTab(act.tabLayout.newTab().setText("공지사항목록"));
 
-        mvpa = new MainViewPagerAdapter(getSupportFragmentManager(), act.tabLayout.getTabCount());
+        mvpa = new MainViewPagerAdapter(getSupportFragmentManager(),2);
         act.viewPager.setAdapter(mvpa);
+
 
     }
 
